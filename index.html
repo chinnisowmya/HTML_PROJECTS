@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.4;
+            color: var(--color-white);
+            margin: 0;
+        }
+        body::before{
+            content:'';
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            background: var(--color-darkblue);
+            background-image: linear-gradient(
+                115deg,
+                rgba(58, 58, 158, 0.8),
+                rgba(136, 136, 206, 0.7)
+                ),
+                url(file:///D:/survey-banner.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        form {
+            background: var(--color-darkblue-alpha);
+            padding: 2.5rem 0.625rem;
+            border-radius: 0.25rem;
+        }
+
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            color:crimson;
+            margin-bottom: 20px;
+            margin-top: 0;
+            
+        }
+
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: flex;
+            align-items: center;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color:white
+        }
+        input {
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+        }
+        .form-control-feedback {
+            color: #dc3545;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+
+        .btn-secondary {
+            background-color: #ffc107;
+            border-color: #ffc107;
+            color: #212529;
+        }
+
+        .btn-secondary:hover {
+            background-color: #ffca2c;
+            border-color: #ffca2c;
+            color: #212529;
+        }
+        #feedback{
+            min-height: 150px;
+            width: 100%;
+            padding: 0.625rem;
+            resize: vertical;
+        }
+        #sub{
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        .clue {
+            margin-left: 0.25rem;
+            font-size: 0.9rem;
+        }
+        input,
+        button,
+        select,
+        textarea {
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        }
+        .forms{
+            background-color:rgba(0, 0, 0, 0.708);
+        }
+                    
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="justify-content: center;">Course Feedback Survey Form</h1>
+        <form class="forms">
+            <div class="form-group">
+                <label for="name">FirstName:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your first name" required>
+            </div>
+            <div class="form-group">
+                <label for="name">LastName:</label>
+                <input type="text" class="form-control" id="name"  placeholder="Enter your last name" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select class="form-control" id="gender" name="gender" required>
+                  <option value="male">Female</option>
+                  <option value="female">Male</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            <div class="form-group">
+                <label for="age">Age <span class="clue">(optional)</span></label>
+                <input type="number" class="form-control" id="age" min="1" max="100" placeholder="Enter your Age" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Contact Number:</label>
+                <input type="tel" class="form-control" id="phone" pattern="[0-9]{10}" placeholder="Enter your phone number" required>
+                <small class="form-text text-muted">Enter a 10-digit phone number without using any spaces or special
+                    characters.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email Address: </label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email Id" required>
+                <small id="emailHelp" class="form-text text-muted">Enter your Email Id in a required format.</small>
+              </div>
+              <div class="form-group">
+                <label>Which option best describes your current role?</label>
+                <select class="form-control" required>
+                    <option disabled selected value >Select current role</option>
+                    <option>Student</option>
+                    <option>Full Time Job</option>
+                    <option>Full Time Learner</option>
+                    <option>Trainer</option>
+                    <option>Prefer not to say</option>
+                </select>
+              </div>
+
+            <div class="form-group" >
+                <label for="phone">How did you hear about hear us?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" 
+                        value="option2">
+                    <label class="form-check-label" >
+                        Did a teacher recommend us?
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="Example1"
+                        value="option2">
+                    <label class="form-check-label" for="Example1">
+                        Did you hear about us at a college event?
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="Example2"
+                        value="option2">
+                    <label class="form-check-label" for="Example2">
+                        Did a friend tell you about us?
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="Example3"
+                        value="option2">
+                    <label class="form-check-label" for="Example3">
+                        Did you see us on social media?
+                    </label>
+                </div>
+                <br>
+                <div class="contain">
+                    <label for="Frontend" id="label-course">Mention the course name you have enrolled in:</label>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="Example4" value="option2">
+                    <label class="form-check-label" for="Example4">
+                        Frontend bootcamp
+                    </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="Example5" value="option2">
+                        <label class="form-check-label" for="Example5">
+                            Backened bootcamp
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="Example6" value="option2">
+                        <label class="form-check-label" for="Example6">
+                            Internet of things
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="Example7" value="option2">
+                        <label class="form-check-label" for="Example7">
+                            Data Analytics
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="Example8" value="option2">
+                        <label class="form-check-radio" for="Example8">
+                            Free Guide to LinkedIn
+                        </label>
+                     </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="clarity">What did you find most helpful about course?</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox"  id="Clear" value="Clear explanations of the concepts">
+                      <label class="form-check-label" for="Clear">Clear explanations of the concepts">Clear explanations of the concepts</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox"  id="Hands" value="Hands-on experience that allowed me to practice building responsive projects"">
+                      <label class="form-check-label" for="Hands">Hands-on experience that allowed me to practice building responsive projects"</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox"  id="well" value="The well-structured learning materials and tutorials"">
+                      <label class="form-check-label" for="well">The well-structured learning materials and tutorials"</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox"  id="Oppo" value="The opportunity to ask questions and discuss doubts during the course">
+                      <label class="form-check-label" for="Oppo">The opportunity to ask questions and discuss doubts during the course</label>
+                    </div> 
+                </div>
+            
+            <div class="form-group">
+                <label for="feedback">Do you have any suggestions on how we can improve this course?</label>
+                <textarea class="form-control" id="feedback" placeholder="Enter your suggestions here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="sub">Submit</button><br>
+            <button type="submit" class="btn btn-danger" id="sub">Reset</button><br>
+            <button type="submit" class="btn btn-warning" id="sub">Clear</button><br>
+            <button type="submit" class="btn btn-info" onclick="window.close()">Close</button>
+            
+            
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+   
+</body>
+
+</html>
